@@ -6,8 +6,8 @@ require_relative 'spec_helper'
 describe Unit do
 
   before :each do
-    @unit = Unit.new(10) # unit starts with 10 HP
-    @other_unit = Unit.new(20)
+    @unit = Unit.new(10, 3) # unit starts with 10 HP
+    @other_unit = Unit.new(20, 3)
   end
 
   describe "#attack!" do

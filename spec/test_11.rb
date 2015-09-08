@@ -26,7 +26,7 @@ describe Footman do
     end
 
   describe "#attack!" do
-    it "should do half of its attack power (AP) in damage to a barracks (5 instead of 10)" do
+    it "should do half of its attack power (AP) in damage to a barracks (1 instead of 3)" do
       enemy = Barracks.new
       expect(enemy).to receive(:damage).with(5)
       @footman.attack!(enemy)

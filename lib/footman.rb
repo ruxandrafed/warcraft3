@@ -1,23 +1,6 @@
 # http://classic.battle.net/war3/human/units/footman.shtml
-
-class Unit
-
-  attr_reader :health_points
-
-  def initialize(health_points, attack_power)
-    @health_points = health_points
-    @attack_power = attack_power
-  end
-
-  def damage(attack_power)
-    @health_points -= attack_power
-  end
-
-  def attack!(another_footman)
-    another_footman.damage(3)
-  end
-
-end
+require_relative 'barracks'
+require_relative 'unit'
 
 class Footman < Unit
 
@@ -29,22 +12,8 @@ class Footman < Unit
     @attack_power = 10
   end
 
-  def attack!(another_footman)
-    another_footman.damage(10)
-  end
-
-end
-
-class Peasant < Unit
-
-  attr_reader :health_points
-
-  def initialize
-    @health_points = 35
-  end
-
-  def attack_power
-    0
+  def attack!(another_entity)
+    another_entity.instance_of?(Barracks) ? another_entity.damage((@attack_power/2).to_i) : another_entity.damage(@attack_power)
   end
 
 end

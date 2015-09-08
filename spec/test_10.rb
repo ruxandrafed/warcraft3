@@ -22,7 +22,7 @@ describe Unit do
     it "should deal the appropriate (attack power based) damage to the enemy unit" do
       enemy_unit = Unit.new(40, 5)
       expect(enemy_unit).to receive(:damage).with(3)
-      @unit.attack!(enemy_unit)
+       @unit.attack!(enemy_unit)
     end
   end
 
