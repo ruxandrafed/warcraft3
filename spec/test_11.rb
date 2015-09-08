@@ -10,10 +10,10 @@ describe Barracks do
 
   describe "#health_points" do
     before :each do
-      @unit = Barracks.new
+      @barrack = Barracks.new
     end
     it "can be retrieved (read) and it's 500" do
-      expect(@unit.health_points).to eq(500)
+      expect(@barrack.health_points).to eq(500)
     end
 end
 
