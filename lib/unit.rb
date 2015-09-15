@@ -17,7 +17,7 @@ class Unit
 end
 
   def dead?
-    @health_points <= 0 ? true : false
+    @health_points <= 0
   end
 
 end
